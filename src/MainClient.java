@@ -2,7 +2,7 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class MainClient {
+public class MainClient implements AutoCloseable {
     public static void main(String[] args) {
         String host = "netology.homework";
         int port = 8083;
@@ -36,6 +36,11 @@ public class MainClient {
 
         resp = in.readLine();
         System.out.println(resp);
+
+    }
+
+    @Override
+    public void close() throws Exception {
 
     }
 }
